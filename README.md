@@ -13,4 +13,4 @@
   * Make the script executable: `chmod +x update-cloudflare-dns-record.py`
   * Add cron by creating new file `/etc/cron.d/update-cloudflare-dns` with below content
     * `0 * * * * . /home/pi/.bash_profile; /home/pi/scripts/update-cloudflare-dns-record.py && curl -fsS --retry 3 https://hc-ping.com/your-uuid-here > /dev/null`
-    * The above script also loads environment variable before executing the script
+    * The above script also loads environment variable before executing the script.
