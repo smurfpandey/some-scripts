@@ -18,5 +18,9 @@ This script enables dynamic IP for your domain on cloudflare by updating the DNS
 * Setup cron for this script
   * Make the script executable: `chmod +x update-cloudflare-dns-record.py`
   * Add cron by creating new file `/etc/cron.d/update-cloudflare-dns` with below content
-    * `0 * * * * . /home/pi/.bash_profile; /home/pi/scripts/update-cloudflare-dns-record.py && curl -fsS --retry 3 https://hc-ping.com/your-uuid-here > /dev/null`
+    * `0 * * * * pi (. /home/pi/.bash_profile /home/pi/scripts/update-cloudflare-dns-record.py && curl -fsS --retry 3 https://hc-ping.com/your-uuid-here > /dev/null)`
     * The above script also loads environment variable before executing the script.
+
+
+Note: To debug the cron following can be used:
+`0 * * * * pi (. /home/pi/.bash_profile && /home/pi/scripts/update-cloudflare-dns-record.py) >> /home/pi/scripts/log/update-cloudflare.log 2>&1`
