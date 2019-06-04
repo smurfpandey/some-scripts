@@ -1,5 +1,9 @@
 ## Update DNS Record at Cloudflare
 
+This script enables dynamic IP for your domain on cloudflare by updating the DNS record every hour.
+
+### Getting Started
+
 * Install dependencies
   * Sentry SDK: Used for logging errors. `pip3 install --upgrade sentry-sdk==0.9.0 --user`
   * Python Dotenv: Used for loading env vars from .env file during development. `pip3 install python-dotenv --user`
